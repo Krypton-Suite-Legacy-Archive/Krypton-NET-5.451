@@ -3,20 +3,20 @@
 //  © Component Factory Pty Ltd, 2006-2019, All rights reserved.
 // The software and associated documentation supplied hereunder are the 
 //  proprietary information of Component Factory Pty Ltd, 13 Swallows Close, 
-//  Mornington, Vic 3931, Australia and are supplied subject to licence terms.
+//  Mornington, Vic 3931, Australia and are supplied subject to license terms.
 // 
-//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.451)
-//  Version 5.451.0.0  www.ComponentFactory.com
+//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.470)
+//  Version 5.470.0.0  www.ComponentFactory.com
 // *****************************************************************************
 
 using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
-	/// <summary>
-	/// Base class for the palette TMS storage classes to derive from.
-	/// </summary>
-	public abstract class KryptonPaletteTMSBase : Storage
+    /// <summary>
+    /// Base class for the palette TMS storage classes to derive from.
+    /// </summary>
+    public abstract class KryptonPaletteTMSBase : Storage
     {
         #region Instance Fields
 
@@ -25,12 +25,12 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Identity
         /// <summary>
         /// Initialize a new instance of the KryptonPaletteKCTBase class.
-		/// </summary>
+        /// </summary>
         /// <param name="internalKCT">Reference to inherited values.</param>
         /// <param name="needPaint">Delegate for notifying paint requests.</param>
         internal KryptonPaletteTMSBase(KryptonInternalKCT internalKCT,
                                        NeedPaintHandler needPaint)
-		{
+        {
             Debug.Assert(internalKCT != null);
 
             InternalKCT = internalKCT;

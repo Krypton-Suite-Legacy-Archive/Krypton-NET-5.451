@@ -3,10 +3,10 @@
 //  © Component Factory Pty Ltd, 2006-2019, All rights reserved.
 // The software and associated documentation supplied hereunder are the 
 //  proprietary information of Component Factory Pty Ltd, 13 Swallows Close, 
-//  Mornington, Vic 3931, Australia and are supplied subject to licence terms.
+//  Mornington, Vic 3931, Australia and are supplied subject to license terms.
 // 
-//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.451)
-//  Version 5.451.0.0  www.ComponentFactory.com
+//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.470)
+//  Version 5.470.0.0  www.ComponentFactory.com
 // *****************************************************************************
 
 using System;
@@ -28,7 +28,7 @@ namespace ComponentFactory.Krypton.Toolkit
     [ToolboxBitmap(typeof(KryptonTreeView), "ToolboxBitmaps.KryptonTreeView.bmp")]
     [DefaultEvent("AfterSelect")]
     [DefaultProperty("Nodes")]
-    [Designer(typeof(ComponentFactory.Krypton.Toolkit.KryptonTreeViewDesigner))]
+    [Designer(typeof(KryptonTreeViewDesigner))]
     [DesignerCategory("code")]
     [Description("Displays a hierarchical collection of labeled items, each represented by a TreeNode")]
     [Docking(DockingBehavior.Ask)]
@@ -180,21 +180,21 @@ namespace ComponentFactory.Krypton.Toolkit
             {
                 switch (m.Msg)
                 {
-                    case PI.WM_ERASEBKGND:
+                    case PI.WM_.ERASEBKGND:
                         // Do not draw the background here, always do it in the paint 
                         // instead to prevent flicker because of a two stage drawing process
                         break;
-                    case PI.WM_PRINTCLIENT:
-                    case PI.WM_PAINT:
+                    case PI.WM_.PRINTCLIENT:
+                    case PI.WM_.PAINT:
                         WmPaint(ref m);
                         break;
-                    case PI.WM_VSCROLL:
-                    case PI.WM_HSCROLL:
-                    case PI.WM_MOUSEWHEEL:
+                    case PI.WM_.VSCROLL:
+                    case PI.WM_.HSCROLL:
+                    case PI.WM_.MOUSEWHEEL:
                         Invalidate();
                         base.WndProc(ref m);
                         break;
-                    case PI.WM_MOUSELEAVE:
+                    case PI.WM_.MOUSELEAVE:
                         if (MouseOver)
                         {
                             MouseOver = false;
@@ -203,7 +203,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         }
                         base.WndProc(ref m);
                         break;
-                    case PI.WM_MOUSEMOVE:
+                    case PI.WM_.MOUSEMOVE:
                         if (!MouseOver)
                         {
                             MouseOver = true;
@@ -847,7 +847,7 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Behavior")]
         [Description("The default image index for nodes.")]
         [Localizable(true)]
-        [TypeConverter("ComponentFactory.Krypton.Toolkit.NoneExcludedImageIndexConverter, ComponentFactory.Krypton.Design, Version=5.451.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
+        [TypeConverter("ComponentFactory.Krypton.Toolkit.NoneExcludedImageIndexConverter, ComponentFactory.Krypton.Design, Version=5.470.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
         [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [RefreshProperties(RefreshProperties.Repaint)]
         [RelatedImageList("ImageList")]
@@ -930,7 +930,7 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Behavior")]
         [Description("The default image index for selected nodes.")]
         [Localizable(true)]
-        [TypeConverter("ComponentFactory.Krypton.Toolkit.NoneExcludedImageIndexConverter, ComponentFactory.Krypton.Design, Version=5.451.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
+        [TypeConverter("ComponentFactory.Krypton.Toolkit.NoneExcludedImageIndexConverter, ComponentFactory.Krypton.Design, Version=5.470.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
         [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [RelatedImageList("ImageList")]
         [DefaultValue(-1)]
@@ -2251,10 +2251,12 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (_trackingMouseEnter)
                 {
                     OnTrackMouseEnter(EventArgs.Empty);
+                    OnMouseEnter(e);
                 }
                 else
                 {
                     OnTrackMouseLeave(EventArgs.Empty);
+                    OnMouseLeave(e);
                 }
             }
         }

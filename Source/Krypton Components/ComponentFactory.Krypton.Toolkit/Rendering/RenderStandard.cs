@@ -3,10 +3,10 @@
 //  © Component Factory Pty Ltd, 2006-2019, All rights reserved.
 // The software and associated documentation supplied hereunder are the 
 //  proprietary information of Component Factory Pty Ltd, 13 Swallows Close, 
-//  Mornington, Vic 3931, Australia and are supplied subject to licence terms.
+//  Mornington, Vic 3931, Australia and are supplied subject to license terms.
 // 
-//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.451)
-//  Version 5.451.0.0  www.ComponentFactory.com
+//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.470)
+//  Version 5.470.0.0  www.ComponentFactory.com
 // *****************************************************************************
 
 using System;
@@ -1050,7 +1050,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                                      PaletteState state,
                                                      bool composition,
                                                      bool glowing)
-		{
+        {
             Debug.Assert(context != null);
             Debug.Assert(palette != null);
             Debug.Assert(values != null);
@@ -1146,14 +1146,14 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns>Memento with cached information.</returns>
         public override IDisposable LayoutContent(ViewLayoutContext context,
-											      Rectangle availableRect,
-											      IPaletteContent palette,
-											      IContentValues values,
-											      VisualOrientation orientation,
-											      PaletteState state,
+                                                  Rectangle availableRect,
+                                                  IPaletteContent palette,
+                                                  IContentValues values,
+                                                  VisualOrientation orientation,
+                                                  PaletteState state,
                                                   bool composition,
                                                   bool glowing)
-		{
+        {
             Debug.Assert(context != null);
             Debug.Assert(palette != null);
             Debug.Assert(values != null);

@@ -3,10 +3,10 @@
 //  © Component Factory Pty Ltd, 2006-2019, All rights reserved.
 // The software and associated documentation supplied hereunder are the 
 //  proprietary information of Component Factory Pty Ltd, 13 Swallows Close, 
-//  Mornington, Vic 3931, Australia and are supplied subject to licence terms.
+//  Mornington, Vic 3931, Australia and are supplied subject to license terms.
 // 
-//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.451)
-//  Version 5.451.0.0  www.ComponentFactory.com
+//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.470)
+//  Version 5.470.0.0  www.ComponentFactory.com
 // *****************************************************************************
 
 using System;
@@ -52,11 +52,11 @@ namespace ComponentFactory.Krypton.Ribbon
         #region Identity
         /// <summary>
         /// Initialize a new instance of the KryptonRibbonGroupClusterDesigner class.
-		/// </summary>
+        /// </summary>
         public KryptonRibbonGroupClusterDesigner()
         {
         }            
-		#endregion
+        #endregion
 
         #region Public
         /// <summary>
