@@ -91,12 +91,14 @@ namespace ComponentFactory.Krypton.Toolkit
             _allowDrawing = false;
             FlashWindowExListener.FlashEvent -= OnFlashWindowExListenerOnFlashEvent;
 
-            foreach (VisualShadowBase shadowForm in _shadowForms)
+            if (_shadowForms != null)
             {
-                shadowForm.Visible = false;
-                shadowForm.Dispose();
+                foreach (VisualShadowBase shadowForm in _shadowForms)
+                {
+                    shadowForm.Visible = false;
+                    shadowForm.Dispose();
+                }
             }
-
         }
 
         private void FormLoaded(object sender, EventArgs e)
