@@ -64,8 +64,8 @@ namespace ComponentFactory.Krypton.Workspace
                             // Product code must be ...
                             //    'S' = Krypton Suite
                             // And version number...
-                            //    '400'
-                            validated = (productInfo[1].Equals("400")) && (productInfo[0][0] == 'S');
+                            //    '451'
+                            validated = (productInfo[1].Equals("451")) && (productInfo[0][0] == 'S');
                         }
                     }
                 }
