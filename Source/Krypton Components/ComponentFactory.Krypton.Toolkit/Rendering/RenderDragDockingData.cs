@@ -154,8 +154,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public bool ActiveMiddle
         {
-            get => _flags.AreFlagsSet(0x0451);
-            set => UpdateFlag(value, 0x0451);
+            get => _flags.AreFlagsSet(0x0400);
+            set => UpdateFlag(value, 0x0400);
         }
 
         /// <summary>
